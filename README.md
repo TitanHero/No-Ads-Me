@@ -1,5 +1,5 @@
 # No-Ads-Me
-Script that downloads host filters, configures them and attaches them to the host file, to avoid ads, pop ups and malicious redirects on the internet,
+Script that downloads host filters, configure and attaches them to the host file, to avoid ads, pop ups and malicious redirects on the internet,
 as it also updates the filters, all this does it in automatic, this script uses wget and unzip, if you do not have them installed, you can install them like this:
 
 In your terminal type this:
