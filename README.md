@@ -19,9 +19,13 @@ The total filters are about 620000.
 To use this script you execute it from the terminal and select an option:
 
 Update-hostsfile 
+
 Backup-hostsfile 
+
 Restore-original-hostsfile
+
 Restore-new-hostsfile 
+
 Exit
 
 Thanks for use my script.
