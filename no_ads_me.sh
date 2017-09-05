@@ -3,6 +3,8 @@
 #    Script made by TitanHero /\ Script hecho por TitanHero
 
 if ! test -a ~/.hostsbackup/hostsoriginal/hosts; then
+	echo "There is no working directory  (╥_╥), a new one  will be created in the path user $HOME/.hostsbackup"
+	sleep 6
 	mkdir ~/.hostsbackup ~/.hostsbackup/hostsdownload ~/.hostsbackup/hostsclean ~/.hostsbackup/hostsoriginal ~/.hostsbackup/hostsnewbackup;cp /etc/hosts ~/.hostsbackup/hostsoriginal/; [ $? -ne 0 ] && echo "Sorry something is wrong can't make backup of your hosts file"
 fi
 
@@ -25,7 +27,7 @@ echo -e "\n"
 echo "$(tput setaf 1)       This script needs$(tput setaf 6) Super User permissions$(tput sgr 0)$(tput setaf 1), for modify the hosts files.$(tput sgr 0)"
 echo -e "\n"
 	
-selection="Update-hostsfile Backup-hostsfile Restore-original-hostsfile Restore-new-hostsfile Exit"
+selection="Update-hostsfile Backup-hostsfile Restore-original-hostsfile Restore-new-hostsfile Help Exit"
 
 PS3="Select an option (Insert the option number) : "
 
@@ -67,7 +69,7 @@ $(tput sgr 0)"""
 		done
 		cicle=$(ls ~/.hostsbackup/hostsdownload/)
 		sed -i '/IPv4/d' ~/.hostsbackup/hostsdownload/$cicle; sed -i '/IPv6/d' ~/.hostsbackup/hostsdownload/$cicle; mv ~/.hostsbackup/hostsdownload/$cicle ~/.hostsbackup/hostsclean/hosttwo.txt 
-		sudo cat ~/.hostsbackup/hostsoriginal/hosts ~/.hostsbackup/hostsclean/hosts  ~/.hostsbackup/hostsclean/hosts.txt ~/.hostsbackup/hostsdownload/hosttwo.txt > ~/.hostsbackup/hosts 
+		cat ~/.hostsbackup/hostsoriginal/hosts ~/.hostsbackup/hostsclean/hosts  ~/.hostsbackup/hostsclean/hosts.txt ~/.hostsbackup/hostsdownload/hosttwo.txt > ~/.hostsbackup/hosts 
 		echo """$(tput setaf 1)
 		              ⣏⡱ ⢀⡀ ⢀⣀ ⢀⣸ ⡀⢀
 		              ⠇⠱ ⠣⠭ ⠣⠼ ⠣⠼ ⣑⡺
@@ -88,7 +90,7 @@ $(tput sgr 0)"""
 		echo "		3) Restore-hostsfile-original"
 		echo ""
 	elif [ "$opt" = "Restore-original-hostsfile" ]; then
-		sudo cp ~/.hostsbackup/hostsoriginal/hosts /etc/hosts
+		cp ~/.hostsbackup/hostsoriginal/hosts /etc/hosts
 		echo """$(tput setaf 1)
 		              ⣏⡱ ⢀⡀ ⢀⣀ ⢀⣸ ⡀⢀
 		              ⠇⠱ ⠣⠭ ⠣⠼ ⠣⠼ ⣑⡺
@@ -98,7 +100,7 @@ $(tput sgr 0)"""
 		echo "		3) Restore-hostsfile-original"
 		echo ""
 	elif [ "$opt" = "Restore-new-hostsfile" ]; then
-		 sudo cp ~/.hostsbackup/hostsnewbackup/hosts /etc/hosts
+		cp ~/.hostsbackup/hostsnewbackup/hosts /etc/hosts
 		echo """$(tput setaf 1)
 		              ⣏⡱ ⢀⡀ ⢀⣀ ⢀⣸ ⡀⢀
 		              ⠇⠱ ⠣⠭ ⠣⠼ ⠣⠼ ⣑⡺
