@@ -45,9 +45,26 @@ $(tput sgr 0)"""
 		echo "                          Wait a minute or less"
 
 		cicle=$(ls ~/.hostsbackup/hostsdownload/)
-		
+		echo """
+
+		▞▀▖
+		▙▄▌
+		▌ ▌
+		▘ ▘
+		$cicle
+
+		"""
 		for arch in $cicle
 		do
+			echo """
+
+▞▀▖
+▙▄▌
+▌ ▌
+▘ ▘
+$arch
+
+			"""
 			sed -i '/localhost/d' ~/.hostsbackup/hostsdownload/$arch && sed -i '/local/d' ~/.hostsbackup/hostsdownload/$arch && sed -i '/broadcasthost/d' ~/.hostsbackup/hostsdownload/$arch && sed -i 's/0.0.0.0/127.0.0.1/g' ~/.hostsbackup/hostsdownload/$arch && mv ~/.hostsbackup/hostsdownload/$arch ~/.hostsbackup/hostsclean/$arch
 		done
 		wget -P ~/.hostsbackup/hostsdownload/ -U "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) Gecko/20100101 Firefox/37.0" http://www.montanamenagerie.org/hostsfile/hosts.zip; sleep 3
@@ -69,10 +86,21 @@ $(tput sgr 0)"""
 			fi
 		done
 		cicle=$(ls ~/.hostsbackup/hostsdownload/)
+		echo """
+         ▗ 
+▝▀▖▞▀▌▌ ▌▄ 
+▞▀▌▚▄▌▌ ▌▐ 
+▝▀▘  ▌▝▀▘▀▘
+$cicle
+
+
+
+		"""
 		sed -i '/IPv4/d' ~/.hostsbackup/hostsdownload/$cicle; sed -i '/IPv6/d' ~/.hostsbackup/hostsdownload/$cicle; mv ~/.hostsbackup/hostsdownload/$cicle ### ~/.hostsbackup/hostsclean/hosttwo.txt 
 		### Aqui esta el error
 		###cat ~/.hostsbackup/hostsoriginal/hosts ~/.hostsbackup/hostsclean/hosts  ~/.hostsbackup/hostsclean/hosts.txt ~/.hostsbackup/hostsdownload/hosttwo.txt > ~/.hostsbackup/hosts
 		cat ~/.hostsbackup/hostsoriginal/hosts ~/.hostsbackup/hostsclean/* > ~/.hostsbackup/hosts
+
 		echo """$(tput setaf 1)
 		              ⣏⡱ ⢀⡀ ⢀⣀ ⢀⣸ ⡀⢀
 		              ⠇⠱ ⠣⠭ ⠣⠼ ⠣⠼ ⣑⡺
