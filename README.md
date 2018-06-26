@@ -1,3 +1,7 @@
+## :warning: Important :warning:
+
+### This proyect was moved to [Gitlab](https://gitlab.com) here's only the README if you want to clone the repo follow the next link: https://gitlab.com/TitanHero/No-Ads-Me
+
 # No-Ads-Me
 Script that downloads host filters, configure and attaches them to the host file, to avoid ads, pop ups and malicious redirects on the internet,
 as it also updates the filters, all this does it in automatic, this script uses wget and unzip, if you do not have them installed, you can install them like this:
